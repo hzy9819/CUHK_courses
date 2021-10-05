@@ -74,10 +74,10 @@ $$
 $$
 \begin{align}
 Pr\{T_2 > t\} &= \int_0^\infty Pr(T_2 > t | T_1 = s)f_{X_1}(s)ds \\
-&= \int_0^\infty e^{m(s) - m(t+s)} \lambda(t)e^{-m(t)}ds \\
-&= \lambda(t)e^{-m(t)} \int_0^\infty e^{m(s) - m(t+s)}ds \\
+&= \int_0^\infty e^{m(s) - m(t+s)} \lambda(s)e^{-m(s)}ds \\
+&= \int_0^\infty \lambda(s) e^{- m(t+s)}ds \\
 
 F_{X_2}(t) &= Pr\{T_2 \le t\} \\
-&= 1 - \lambda(t)e^{-m(t)} \int_0^\infty e^{m(s) - m(t+s)}ds
+&= 1 - \int_0^\infty \lambda(s) e^{- m(t+s)}ds
 \end{align}
 $$
