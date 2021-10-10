@@ -136,7 +136,63 @@ In summary, $\mathcal{S}_{+}^{n} = \bigcap_{A \in \mathcal{S}_{+}^{n}}\left\{X \
 
 **(b)**
 
-​	
+​	First we know that, $z^* = \prod_K(x) \Leftrightarrow z^* \in K, (z - z^*)^T(x - z^*) \le 0, \forall z \in K$
+
+​	**① proof of** $\Rightarrow$:
+
+​		With the property above, we have $z^* \in K$, then let us show that $(x - z^*)^T z^* = 0$
+
+​		assume $(x - z^*)^T z^* \neq 0$, let $t = x - z^*, z^* = x - t$
+
+​		$\because t^Tz^* \neq 0$
+
+​		$\therefore t = \alpha z^* + z$, where $\alpha \neq 0, z^* \neq 0, z^Tz^* = 0$ and $t^Tz^* = \alpha (z^*)^Tz^*$
+
+​		$\therefore ||x - z^*||^2_2 = ||x - (x - t)||^2_2 = ||t||^2_2 = ||\alpha z^*||^2_2 + ||z||^2_2 = |\alpha| ||z^*||^2_2 + ||z||^2_2$
+
+​		by the definition of closed convex cone and $z^* \neq 0, \alpha \neq 0$, we can find a $z^o = (1 - sign(\alpha) min(\alpha, 1))z^* \in K, ||x - z^o|| = (1 - sign(\alpha) min(\alpha, 1))|\alpha|||z^*||^2_2 + ||z||^2_2 < ||x - z^*||^2_2$
+
+​		so that  $z^* \neq \prod_K(x)$, contradicting the assumption, thus $(x - z^*)^T z^* = 0$
+
+​		last let us shat that $x - z^* \in K^o$
+
+​		$\because (x - z^*)^T z^* = 0$ and $(z - z^*)^T(x - z^*) \le 0, \forall z \in K$
+
+​		$\therefore z^T(x - z^*) = (x - z^*)^Tz\le 0, \forall z \in K$
+
+​		by the definition of $K^o$, we get $x - z^* \in K^o$
+
+​	**② proof of** $\Leftarrow$:
+
+​		$\because x - z^* \in K^o$ and $(x - z^*)^T z^* = 0$
+
+​		$\therefore (z - z^*)^T(x - z^*) \le 0, \forall z \in K$
+
+​		so that, we get $z^* \in K, (z - z^*)^T(x - z^*) \le 0, \forall z \in K \Rightarrow z^* = \prod_K(x)$
+
+In summary, $z^* = \prod_K(x) \Leftrightarrow z^* \in K, x - z^* \in K^o, (x - z^*)^T z^* = 0$
+
+##### (c)
+
+​	Using the result in (b), we only need to show that $z^* = \prod_K(x), x - z^* = \prod_{K^o}(x)$
+
+​	what's more, we only need to show that $K = \{\omega \in \mathbb{R}^n:\omega^Tx \le 0, \forall x \in K^o\}, K^o = \{\omega \in \mathbb{R}^n:\omega^Tx \le 0, \forall x \in K\}, K \subseteq \mathbb{R}^n$ be a closed convex cone
+
+​	$\because x^T\omega = \omega^Tx$, so that $K = \{\omega \in \mathbb{R}^n:\omega^Tx \le 0, \forall x \in K^o\}$ is true obviously by definition
+
+​	Using the result in (b):
+
+​	$x - z^* \in K^o, x - (x - z^*) = x \in K, (x - (x - z^*))^T(x - z^*) = x^T(x - z^*) = (x - z^*)^Tx = 0 \Rightarrow x - z^* = \prod_{K^o}(x)$
+
+​	In summary, $x = \prod_K(x) + \prod_{K^o}(x)$
+
+
+
+#### Problem 4
+
+##### (a)
+
+​		
 
 
 
