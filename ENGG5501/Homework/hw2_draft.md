@@ -190,15 +190,55 @@ In summary, $z^* = \prod_K(x) \Leftrightarrow z^* \in K, x - z^* \in K^o, (x - z
 
 #### Problem 4
 
-##### (a)
+##### **① 1 $\Leftrightarrow $ 2**
 
-​		
+​	let $g(x) = f(x) + \frac{\rho}{2}||x||^2_2$,  $g(x)$ is convex which means $g(\alpha x + (1-\alpha)y) \le \alpha g(x) + (1 - \alpha)g(y), \forall x,y \in \mathbb{R}^n, \alpha \in [0,1]$
+
+​	which is
+
+​		$f(\alpha x + (1-\alpha)y) + \frac{\rho}{2}||\alpha x + (1-\alpha)y||^2_2 \le \alpha (f(x) + \frac{\rho}{2}||x||^2_2) + (1 - \alpha)(f(y) + \frac{\rho}{2}||y||^2_2)$
+
+$\Leftrightarrow f(\alpha x + (1-\alpha)y) \le \alpha f(x) + (1 - \alpha)f(y) + \alpha \frac{\rho}{2}||x||^2_2 + (1 - \alpha) \frac{\rho}{2}||y||^2_2 - \frac{\rho}{2}||\alpha x + (1-\alpha)y||^2_2$
+
+$\Leftrightarrow f(\alpha x + (1-\alpha)y) \le \alpha f(x) + (1 - \alpha)f(y) + \frac{\rho}{2}(\alpha ||x||^2_2 + (1 - \alpha)||y||^2_2 -||\alpha x + (1-\alpha)y||^2_2)$
+
+$\Leftrightarrow f(\alpha x + (1-\alpha)y) \le \alpha f(x) + (1 - \alpha)f(y) + \frac{\rho}{2}(\alpha ||x||^2_2 + (1 - \alpha)||y||^2_2 -(\alpha^2||x||^2_2 + (1-\alpha)^2||y||^2_2 + 2\alpha(1-\alpha)\sum_{i=1}^n x_iy_i)$
+
+$\Leftrightarrow f(\alpha x + (1-\alpha)y) \le \alpha f(x) + (1 - \alpha)f(y) + \frac{\rho}{2}\alpha(1-\alpha)(||x||^2_2 + ||y||^2_2 -2\sum_{i=1}^n x_iy_i)$
+
+$\Leftrightarrow f(\alpha x + (1-\alpha)y) \le \alpha f(x) + (1 - \alpha)f(y) + \frac{\rho \alpha(1-\alpha)}{2}||x-y||^2_2$
+
+​	$\because f$ is $\rho$-convex, so the inequality is true by the definition
+
+$\therefore  f$ is $\rho$-convex $\Leftrightarrow$  $g(x)$ is convex
+
+**② 2 $\Leftrightarrow$ 3**
+
+​	$g(x) = f(x) + \frac{\rho}{2}||x||^2_2, \nabla g(x) = \nabla f(x) + \rho x$
+
+$\because g$ is convex
+
+$\therefore \forall x, y \in \mathbb{R}^n, g(y) \ge g(x) + \nabla g(x)^T(y - x)$
+
+which is
+
+​	$f(y) + \frac{\rho}{2}||y||^2_2 \ge f(x) + \frac{\rho}{2} ||x||^2_2 + (\nabla f(x) + \rho x)^T(y-x)$
+
+$\Leftrightarrow f(y) + \frac{\rho}{2}||y||^2_2 \ge f(x) + \frac{\rho}{2} ||x||^2_2 + \nabla f(x)^T(y-x) + \rho x^T(y-x)$
+
+$\Leftrightarrow f(y) \ge f(x) + \nabla f(x)^T(y-x) + \frac{\rho}{2} ||x||^2_2 - \frac{\rho}{2}||y||^2_2  + \rho x^T(y-x)$
+
+$\Leftrightarrow f(y) \ge f(x) + \nabla f(x)^T(y-x) + \frac{\rho}{2} (||x||^2_2 - ||y||^2_2  + 2 x^T(y-x))$
+
+$\Leftrightarrow f(y) \ge f(x) + \nabla f(x)^T(y-x) - \frac{\rho}{2} (||y||^2_2  + ||x||^2_2 - 2 x^Ty)$
+
+$\Leftrightarrow f(y) \ge f(x) + \nabla f(x)^T(y-x) - \frac{\rho}{2} ||y-x||^2_2$
+
+$\therefore g$ is convex $\Leftrightarrow$ $\forall x, y \in \mathbb{R}^n, f(y) \ge f(x) + \nabla f(x)^T(y-x) - \frac{\rho}{2} ||y-x||^2_2$
 
 
 
-​				
-
-​					
+In conclusion, 1 $\Leftrightarrow $ 2 $\Leftrightarrow$ 3, the statements are equivalent.			
 
 ​			
 
