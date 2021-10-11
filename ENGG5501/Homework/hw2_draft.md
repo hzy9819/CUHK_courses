@@ -1,4 +1,4 @@
-# Homework 2（draft）
+# Homework 2
 
 #### Problem 1
 
@@ -150,7 +150,11 @@ In summary, $\mathcal{S}_{+}^{n} = \bigcap_{A \in \mathcal{S}_{+}^{n}}\left\{X \
 
 ​		$\therefore ||x - z^*||^2_2 = ||x - (x - t)||^2_2 = ||t||^2_2 = ||\alpha z^*||^2_2 + ||z||^2_2 = |\alpha| ||z^*||^2_2 + ||z||^2_2$
 
-​		by the definition of closed convex cone and $z^* \neq 0, \alpha \neq 0$, we can find a $z^o = (1 - sign(\alpha) min(\alpha, 1))z^* \in K, ||x - z^o|| = (1 - sign(\alpha) min(\alpha, 1))|\alpha|||z^*||^2_2 + ||z||^2_2 < ||x - z^*||^2_2$
+​		besides, let $z = 0, (-z^*)^T(x - z^*) = (-z^*)^Tt = -\alpha(z^*)^Tz^* \le 0$
+
+​		$\therefore \alpha \ge 0$
+
+​		by the definition of closed convex cone and $z^* \neq 0, \alpha \ge 0$, we can find a $z^o = (1 + \alpha)z^* \in K, ||x - z^o|| = ||z||^2_2 < ||x - z^*||^2_2$
 
 ​		so that  $z^* \neq \prod_K(x)$, contradicting the assumption, thus $(x - z^*)^T z^* = 0$
 
